@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃</title>
+    <style>
+        span, div {
+            display: inline-block;
+            background-color: #feb;
+            border: 1px solid #715;
+            margin: auto;
+            width: 150px;
+            height: 120px;
+            text-align: center;
+        }
+        span:hover { visibility: visible;}
+        img {
+            border: 5px solid #3f3838;
+            opacity: 0.3;
+        }
+        .relative-img{
+            position: fixed;
+            top: 50px;
+            left: 30px;
+        }
+        .relative-img2{
+            position: fixed;
+            top: 300px;
+            left: 30px;
+        }
+        img:hover {
+            border: 5px solid #383333;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body style="font-size: 20px; font-weight: bold">
+    span 태그(인라인 태그): <br>
+    <p><span>span</span> <span>한 줄에 표시</span></p>
+    <span>div 태그</span> (블록 태그): <br>
+    <p><div>div</div> <div>블록에 표시</div></p>
+    <br><hr><br>
+    <span style="visibility: hidden;">숨기기</span>
+    <span style="visibility: visible;">보이기</span>
+    <br><hr><br>
+    <img src="./media/1p.jpg">
+    <img src="./media/2p.jpg" class="relative-img">
+    <img src="./media/3p.jpg">
+    <img src="./media/4p.jpg" class="relative-img2">
+</body>
+</html>
