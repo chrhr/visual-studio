@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style_js.css">
+</head>
+<body>
+    <p>aaaaaaaa</p>
+    <p class="elm">bbbbbbbb</p>
+    <p class="elm">cccccccc</p>
+    <script>
+        const elms = document.getElementsByClassName("elm");
+        for (let i = 0; i < elms.lengh; i++)
+            document.write(`ByClassName: elms[${i}] = ${elms[i].innerHTML}<br>`);
+        document.write("<hr");
+        const tags = document.getElementsByTagName("p");
+        for (let i = 0; i < tags.length; i++)
+            document.write(`ByTagName P : tags[${i}] = ${tags[i].innerHTML}<br>`);
+    </script>
+</body>
+</html>

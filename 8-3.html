@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style_js.css">
+</head>
+<body>
+    <p class="elm">aaaaaaaa</p>
+    <p class="elm">bbbbbbbb</p>
+    <p>cccccccc</p>
+    <p id="ide">dddddddd</p>
+    <script>
+        const dots = document.querySelectorAll(".elm");
+        for (let i = 0; i < dots.lengh; i++)
+            document.write(`dots[${i}] = ${dots[i].innerHTML}<br>`);
+        document.write("<hr");
+        const hash = document.querySelectorAll("#ide");
+        for (let i = 0; i < hash.length; i++)
+            document.write(`hash[${i}] = ${hash[i].innerHTML}<br>`);
+    </script>
+</body>
+</html>

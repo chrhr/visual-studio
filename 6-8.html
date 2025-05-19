@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>switch</title>
+    <link rel="stylesheet" href="style_js.css">
+</head>
+<body>
+    <script>
+        let coupon = parseInt(prompt("쿠폰 개수 : "));
+        document.write("쿠폰 : " + coupon + "장<hr>");
+        coupon = Math.floor(coupon / 10);
+        switch (coupon) {
+            case 2:
+                document.write("여행가방");        // 20장 이상
+                break;
+            case 1:
+                document.write("다이어리")        // 10장 이상
+                break;
+            default:
+                document.write("커피 한잔");       // 10장 미만
+        }
+    </script>
+</body>
+</html>
