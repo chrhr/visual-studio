@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>체험 예약하기</title>
+    <style>
+        body {
+            background-color: white;
+        }
+        p {
+            margin: 0;
+            background: url("image/tiger1.jpg");
+            background-size: contain;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+            font-size: 40px;
+            font-weight: 900;
+        }
+    </style>
+</head>
+<body>
+    <p>호랑이 먹이 주기</p><hr>
+    <h3><span style="font-size: x-small;">▶</span>체험 예약하기</h3>
+    <select id="day">
+        <option value="없음">--예약할 요일 선택하기--</option>
+        <option value="화요일">화요일</option>
+        <option value="금요일">금요일</option>
+        <option value="토요일">토요일</option>
+    </select>
+    <select id="time">
+        <option value="없음">--예약할 시간 선택하기--</option>
+        <option value="오후 1시">오후 1시</option>
+        <option value="오후 5시">오후 5시</option>
+    </select>
+    <br>
+    <span id="result1"></span>
+    <span id="result2"></span>
+
+    <script>
+        let selectbox1 = document.getElementById("day");
+        let resultbox1 = document.getElementById("result1");
+
+        let selectbox2 = document.getElementById("time");
+        let resultbox2 = document.getElementById("result2");
+
+        selectbox1.addEventListener("change", function() {
+            let selected = selectbox1.value;
+            if (selected !== "없음") {
+                resultbox1.innerHTML = "<br>" + selected + "<br>";
+            } else {
+                resultbox1.innerHTML = "";
+            }
+        });
+
+        selectbox2.addEventListener("change", function() {
+            let selected = selectbox2.value;
+            if (selected !== "없음") {
+                resultbox2.innerHTML =
+                `<div>
+                    ${selected}</span><br><br>
+                    <button onclick="book_done()">예약하기</button>
+                </div> `;
+            } else {
+                resultbox2.innerHTML = "";
+            }
+        });
+
+        function book_done() {
+            alert("예약 완료");
+            window.close();
+        }
+    </script>
+</body>
+</html>

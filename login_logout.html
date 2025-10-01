@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인 관련</title>
+</head>
+<body>
+    <span id="loginstatus" style="font-weight: bold;">비회원 상태</span>
+    <button onclick="login()">login</button>
+    <button onclick="logout()">logout</button><br>
+
+    <label>아이디 : <br>
+        <input type="text" placeholder="6글자 이하, 띄어쓰기 불가능" id="userid"></label><br>
+    <label>비밀번호 : <br>
+        <input type="password" placeholder="8글자 이하, 숫자 하나 포함" id="userpw"></label>
+    <button id="checkpw" onclick="showpw()" title="비밀번호 확인">🕶</button><br><br>
+
+    <script>
+        function showpw() {
+            const inputpw = document.getElementById("userpw");
+            const putpw = document.getElementById("checkpw");
+
+            if (inputpw.type === 'password') {
+                inputpw.type = 'text';
+                putpw.textContent = '👓'
+            } else {
+                inputpw.type = 'password';
+                putpw.textContent = '🕶';
+            }
+        }
+
+        function login() {
+            const id = document.getElementById("userid").value;
+            const pw = document.getElementById("userpw").value;
+            
+            const idlength = id.length <=6;
+            const hasspace = /\s/.test(id) || /\s/.test(pw);
+            const pwlength = pw.length <= 8;
+            const pwnumber = /[0-9]/.test(pw);
+
+            if (idlength && pwlength && pwnumber && !hasspace) {
+                document.getElementById("loginstatus").textContent = `${id} 님`;
+                alert("로그인 완료")
+
+                document.getElementById("userid").value = "";
+                document.getElementById("userpw").value = "";
+            } else {alert("로그인 조건을 충족하지 않음.")}
+        }
+
+        function logout() {
+            sessionStorage.removeItem('loginUserId');
+            document.getElementById('loginstatus').textContent = '비회원 상태';
+            alert('로그아웃 되었습니다.');
+
+            document.getElementById("userid").value = "";
+            document.getElementById("userpw").value = "";
+        }
+    </script>
+</body>
+</html>
